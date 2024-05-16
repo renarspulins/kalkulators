@@ -32,6 +32,7 @@ def button_log():
         e.delete(0, END)
         e.insert(0, "Error")
 
+
 mansLogs = Tk()
 mansLogs.title('Calculator')
 
@@ -50,17 +51,13 @@ btn2 = Button(mansLogs, text='2', padx='40', pady='20', command=lambda: button_c
 btn3 = Button(mansLogs, text='3', padx='40', pady='20', command=lambda: button_click(3))
 btn0 = Button(mansLogs, text='0', padx='40', pady='20', command=lambda: button_click(0))
 
-
 btn_plus = Button(mansLogs, text='+', padx='40', pady='20', command=lambda: button_click('+'))
 btn_minus = Button(mansLogs, text='-', padx='40', pady='20', command=lambda: button_click('-'))
 btn_multiply = Button(mansLogs, text='*', padx='40', pady='20', command=lambda: button_click('*'))
 btn_divide = Button(mansLogs, text='/', padx='40', pady='20', command=lambda: button_click('/'))
-btn_log = Button(mansLogs, text='log', padx='40', pady='20', command=button_log)
-
 
 btn_clear = Button(mansLogs, text='C', padx='40', pady='20', command=button_clear)
 btn_equal = Button(mansLogs, text='=', padx='40', pady='20', command=button_equal)
-
 
 btn7.grid(row=1, column=0)
 btn8.grid(row=1, column=1)
@@ -77,9 +74,13 @@ btn_plus.grid(row=1, column=3)
 btn_minus.grid(row=2, column=3)
 btn_multiply.grid(row=3, column=3)
 btn_divide.grid(row=4, column=3)
-btn_log.grid(row=4, column=1)
 
-btn_clear.grid(row=4, column=2)
-btn_equal.grid(row=4, column=4)
+btn_clear.grid(row=4, column=1)
+btn_equal.grid(row=4, column=2)
+
+# Change button colors
+buttons = [btn7, btn8, btn9, btn4, btn5, btn6, btn1, btn2, btn3, btn0, btn_plus, btn_minus, btn_multiply, btn_divide, btn_clear, btn_equal]
+for btn in buttons:
+    btn.configure(bg="lightgray")
 
 mansLogs.mainloop()
